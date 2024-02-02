@@ -14,3 +14,78 @@
 .alignCentre{
   text-align: center;
 }
+
+.fnt-description{
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+ 
+.fnt-heading{
+  font-size: 3rem;
+}
+
+.img-control{
+  border-radius:20px;
+  /* height:60rem;
+  width:100%; */
+}
+
+.food-card-background{
+  background: linear-gradient(to right, #FFD700, #FFA500);
+  color:#fff;
+}
+
+.btn-food{
+  color:#fff;
+  font-size: 2rem;
+  background: linear-gradient(to right, #FFD700, #FFA500);
+ 
+  padding: 10px 20px;
+  background-color: #3498db; /* Example button background color */
+  color: #fff; /* Example text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-plantation{
+  color:#fff;
+  font-size: 2rem;
+  background: linear-gradient(to right, #00FF00, #008000);
+ 
+  padding: 10px 20px;
+  background-color: #3498db; /* Example button background color */
+  color: #fff; /* Example text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-education{
+  color:#fff;
+  font-size: 2rem;
+  background:  linear-gradient(to right, #66B2FF, #003366);
+  padding: 10px 20px;
+  background-color: #3498db; /* Example button background color */
+  color: #fff; /* Example text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+button:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjusted box shadow on hover */
+}
+.plantation-card-background{
+  background: linear-gradient(to right, #00FF00, #008000);
+  color:#fff;
+}
+
+.education-card-background{
+  background: linear-gradient(to right, #66B2FF, #003366);
+  color:#fff;
+}

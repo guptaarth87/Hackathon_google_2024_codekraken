@@ -1,0 +1,32 @@
+.sectiontwo_div{
+    height:25rem;
+    background-repeat: no-repeat; 
+    position:relative;
+    /* width:100%; */
+    border-radius: 15px;
+    object-fit:cover;
+    
+}
+
+.margin{
+    margin-top:5rem;
+    margin-bottom: 2rem;
+    margin-left:1rem;
+    align-items:center
+}
+
+
+
+@media(max-width:660px){
+    .sectiontwo_text{
+        font-size:20px;
+       margin-right:2rem;
+    }
+    .margin{
+        margin:0rem;
+    }
+}
+
+.white{
+    color:#fff;
+}
