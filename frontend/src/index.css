@@ -16,13 +16,13 @@
 }
 
 .fnt-description{
-  font-weight: 400;
-  font-size: 2rem;
+  font-weight: 100;
+  font-size: 1.2rem;
 }
 
  
 .fnt-heading{
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .img-control{
@@ -38,7 +38,7 @@
 
 .btn-food{
   color:#fff;
-  font-size: 2rem;
+  font-size: 1.3rem;
   background: linear-gradient(to right, #FFD700, #FFA500);
  
   padding: 10px 20px;
@@ -51,7 +51,7 @@
 }
 .btn-plantation{
   color:#fff;
-  font-size: 2rem;
+  font-size: 1.3rem;
   background: linear-gradient(to right, #00FF00, #008000);
  
   padding: 10px 20px;
@@ -65,7 +65,7 @@
 
 .btn-education{
   color:#fff;
-  font-size: 2rem;
+  font-size: 1.3rem;
   background:  linear-gradient(to right, #66B2FF, #003366);
   padding: 10px 20px;
   background-color: #3498db; /* Example button background color */

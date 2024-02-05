@@ -9,16 +9,13 @@ export default function HeroImage() {
     <>
     <br></br>
     <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+   
     
    
         <div className="landing_background mt-4" id="SectionOne">
-    {/* <div className="overlay"></div> */}
+    <div className="overlay"></div>
        <video className="video_control" src={HeroVedio} autoPlay muted loop />
-       {/* <div className="contentx">
+       <div className="contentx">
             <h1 className='font-sectionone fnt-heading'>Welcome</h1>
             <h2 className='font-sectionone fnt-heading'>To Towards Happiness </h2>
           
@@ -26,7 +23,7 @@ export default function HeroImage() {
             <h2 className='alignCentre font-sectionone fnt-heading'>"Unite for Impact, Volunteer for Change. Your Power, Our Community"</h2>
             </div>
             
-        </div> */}
+        </div>
        
        </div>
     </>

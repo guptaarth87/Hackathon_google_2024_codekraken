@@ -16,11 +16,11 @@ import Donate from '../assets/landing/donate.jpeg';
 export default function LandingPage() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroImage />
       <div className="container">
         
-        {/* <Tagline /> */}
+        <Tagline />
         {/* <img src={Donate} className="img-control"/> */}
         <Hero />
         <Vision />

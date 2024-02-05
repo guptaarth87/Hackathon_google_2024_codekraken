@@ -2,8 +2,13 @@ import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import EventCard from '../Components/AllEvents/EventCard';
+import axios from 'axios';
+import API_URL from '../_helper';
 
 export default function Events() {
+
+  axios.get(`${API_URL}/volunteers`)
+  .then(res=>console.log(res));
 
     const FoodDriveData = {
         name_:"Food Drive",
@@ -80,9 +85,9 @@ export default function Events() {
         <Tabs>
             <div className="container">
                <TabList>
-                 <Tab ><h1>Events</h1></Tab>
-                 <Tab><h1>UpComming Events</h1></Tab>
-                 <Tab><h1>Previous Events</h1></Tab>
+                 <Tab ><h3>Events</h3></Tab>
+                 <Tab><h3>UpComming Events</h3></Tab>
+                 <Tab><h3>Previous Events</h3></Tab>
                </TabList>
               
                <TabPanel >
@@ -90,16 +95,14 @@ export default function Events() {
                  <div className='border rounded col-12 p-5 food-card-background mt-3'>
                         <EventCard cardData={FoodDriveData}/>
                         <br></br>
-                          <br></br>
-                          <br></br>
+                        
                           <button className='btn col-lg-2 col-md-3 col-sm-4 btn-food'>Donate 🤝</button>
                   </div>
 
                  <div className='border rounded col-12 p-4 plantation-card-background  mt-3'>
                  <EventCard cardData={PlantationDriveData}/>
                  <br></br>
-                          <br></br>
-                          <br></br>
+                         
                           <button className='btn col-lg-2 col-md-3 col-sm-4 btn-plantation'>Donate 🤝</button>
                      
                  </div>
@@ -107,8 +110,7 @@ export default function Events() {
                  <div className='border rounded col-12 p-4 education-card-background  mt-3'>
                  <EventCard cardData={EducationalWorkshopData}/>
                  <br></br>
-                          <br></br>
-                          <br></br>
+                          
                           <button className='btn col-lg-2 col-md-3 col-sm-4 btn-education'>Donate 🤝</button> 
                  </div>
                </TabPanel>
@@ -121,7 +123,7 @@ export default function Events() {
         switch (event.name_) {
           case 'Food Drive':
             jsxElement =  <div className='border rounded col-12 p-4 food-card-background  mt-3'>
-                <h1><strong>{event.name_}</strong></h1>
+                <h3><strong>{event.name_}</strong></h3>
                 <br></br>
                 <div className='fnt-description col-lg-5'>Date for drive - {event.date_} </div>
                 <div className='fnt-description col-lg-5'>Volunteer required for drive - {event.remaining_volunteers} </div>
@@ -136,7 +138,7 @@ export default function Events() {
             break;
           case 'Plantation Drive':
             jsxElement = <div className='border rounded col-12 p-4 plantation-card-background  mt-3'>
-            <h1><strong>{event.name_}</strong></h1>
+            <h3><strong>{event.name_}</strong></h3>
             <br></br>
             <div className='fnt-description col-lg-5'>Date for drive - {event.date_} </div>
             <div className='fnt-description col-lg-5'>Volunteer required for drive - {event.remaining_volunteers} </div>
@@ -151,7 +153,7 @@ export default function Events() {
             break;
           case 'Educational Workshop':
             jsxElement = <div className='border rounded col-12 p-4 education-card-background  mt-3'>
-            <h1><strong>{event.name_}</strong></h1>
+            <h3><strong>{event.name_}</strong></h3>
             <br></br>
             <div className='fnt-description col-lg-5'>Date for drive - {event.date_} </div>
             <div className='fnt-description col-lg-5'>Volunteer required for drive - {event.remaining_volunteers} </div>
@@ -183,7 +185,7 @@ export default function Events() {
         switch (event.name_) {
           case 'Food Drive':
             jsxElement =  <div className='border rounded col-12 p-4 food-card-background  mt-3'>
-                <h1><strong>{event.name_}</strong></h1>
+                <h3><strong>{event.name_}</strong></h3>
                 <br></br>
                 <div className='fnt-description col-lg-5'>Date  - {event.date_} </div>
                 <div className='fnt-description col-lg-5'>Volunteers participated - {event.volunteer_participated} </div>
@@ -191,14 +193,14 @@ export default function Events() {
                 
                 <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
                 <br></br>
-                          <br></br>
+                        
                           <button className='btn col-lg-3 col-md-3 col-sm-4 btn-food'>View Details</button>
               
             </div>
             break;
           case 'Plantation Drive':
             jsxElement = <div className='border rounded col-12 p-4 plantation-card-background  mt-3'>
-            <h1><strong>{event.name_}</strong></h1>
+            <h3><strong>{event.name_}</strong></h3>
             <br></br>
             <div className='fnt-description col-lg-5'>Date  - {event.date_} </div>
                 <div className='fnt-description col-lg-5'>Volunteers participated - {event.volunteer_participated} </div>
@@ -206,14 +208,14 @@ export default function Events() {
                 
             <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
             <br></br>
-                          <br></br>
+                         
                           <button className='btn col-lg-3 col-md-3 col-sm-4 btn-plantation'>View Details</button>
                      
         </div>
             break;
           case 'Educational Workshop':
             jsxElement = <div className='border rounded col-12 p-4 education-card-background  mt-3'>
-            <h1><strong>{event.name_}</strong></h1>
+            <h3><strong>{event.name_}</strong></h3>
             <br></br>
             <div className='fnt-description col-lg-5'>Date  - {event.date_} </div>
                 <div className='fnt-description col-lg-5'>Volunteers participated - {event.volunteer_participated} </div>
@@ -221,7 +223,7 @@ export default function Events() {
                 
             <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
             <br></br>
-                          <br></br>
+                          
                           <button className='btn col-lg-3 col-md-3 col-sm-4 btn-education'>View Details</button>
               
         </div>

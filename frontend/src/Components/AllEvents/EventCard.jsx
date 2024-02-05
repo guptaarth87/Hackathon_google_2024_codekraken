@@ -6,7 +6,7 @@ export default function EventCard(props) {
     var goal_completed = (recievedData.remaining_amt / recievedData.required_amt)*100
   return (
    <>
-          <h1 ><strong>{recievedData.name_}</strong></h1>
+          <h3 ><strong>{recievedData.name_}</strong></h3>
                           <br></br>
                           <div className="row">
                           <div className='fnt-description col-lg-5'>Amount Required for drive - {recievedData.required_amt} INR</div>

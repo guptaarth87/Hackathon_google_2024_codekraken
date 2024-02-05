@@ -7,6 +7,7 @@ import LandingPage from './Pages/LandingPage';
 import Footer from './Components/Footer/Footer';
 import Events from './Pages/Events';
 import ContactusPage from './Pages/ContactusPage';
+import VolunteerRegistration from './Pages/VolunteerRegistration';
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
       <Route path='/home' element={<LandingPage/>} />
       <Route path='/events' element={<Events/>} />
       <Route path='/contact' element={<ContactusPage/>} />
+      <Route path='/registervolunteer' element={<VolunteerRegistration/>} />
      </Routes>
      <Footer/>
     </>
