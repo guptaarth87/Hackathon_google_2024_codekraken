@@ -3,7 +3,7 @@ import "./Faqs.css";
 export default function Faqs() {
   return (
     <>
-      <h3 className="alignCentre mt-5 display-6 fnt-heading ">
+      <h3 className="alignCentre mt-5 display-6 fnt-heading " id="faq">
         Frequently Asked Questions
       </h3>
       <details className="mt-2  border-bottom-0 fnt-description">

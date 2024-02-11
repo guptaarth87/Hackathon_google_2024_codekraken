@@ -1,15 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import EventCard from '../Components/AllEvents/EventCard';
+import { HashLink } from 'react-router-hash-link';
 import axios from 'axios';
 import API_URL from '../_helper';
 
 export default function Events() {
 
-  axios.get(`${API_URL}/volunteers`)
-  .then(res=>console.log(res));
+  const [Events , setEvents] = useState(null)
+  const [UpcomingEvents , setUpcomingEvents] = useState(null)
+  const [CompletedEvents , setCompletedEvents] = useState(null)
 
+  
+  // axios.get(`${API_URL}/events`)
+  // .then(res=>setEvents(res.data));
+
+  // axios.get(`${API_URL}/upcoming_events`)
+  // .then(res=>setUpcomingEvents(res.data));
+
+  // axios.get(`${API_URL}/completed_events`)
+  // .then(res=>setCompletedEvents(res.data));
+
+  // console.log(CompletedEvents)
     const FoodDriveData = {
         name_:"Food Drive",
         required_amt: 10000,
@@ -55,7 +68,7 @@ export default function Events() {
     }
     ]
 
-    const CompletedEvents=[
+    const CompletedEventss=[
             {
                 name_:"Food Drive",
                 recieved_amt: 10000,
@@ -132,7 +145,7 @@ export default function Events() {
                 <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
                 <br></br>
                           <br></br>
-                          <button className='btn col-lg-3 col-md-3 col-sm-4 btn-food'>Participate as Volunteer 🤝</button>
+                          <HashLink  className='btn col-lg-3 col-md-3 col-sm-4 btn-food' to='/registervolunteer'>Participate as Volunteer 🤝</HashLink>
               
             </div>
             break;
@@ -147,8 +160,8 @@ export default function Events() {
             <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
             <br></br>
                           <br></br>
-                          <button className='btn col-lg-3 col-md-3 col-sm-4 btn-plantation'>Participate as Volunteer 🤝</button>
-                     
+                          <HashLink  className='btn col-lg-3 col-md-3 col-sm-4 btn-plantation' to='/registervolunteer'>Participate as Volunteer 🤝</HashLink>
+              
         </div>
             break;
           case 'Educational Workshop':
@@ -162,7 +175,7 @@ export default function Events() {
             <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
             <br></br>
                           <br></br>
-                          <button className='btn col-lg-3 col-md-3 col-sm-4 btn-education'>Participate as Volunteer 🤝</button>
+                          <HashLink  className='btn col-lg-3 col-md-3 col-sm-4 btn-education' to='/registervolunteer'>Participate as Volunteer 🤝</HashLink>
               
         </div>
             break;
@@ -179,7 +192,7 @@ export default function Events() {
                </TabPanel>
 
                <TabPanel>
-               {CompletedEvents.map((event, index) => {
+               {CompletedEventss.map((event, index) => {
         // Conditionally render JSX based on event name
         let jsxElement;
         switch (event.name_) {

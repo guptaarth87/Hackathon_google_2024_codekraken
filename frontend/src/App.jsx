@@ -8,12 +8,14 @@ import Footer from './Components/Footer/Footer';
 import Events from './Pages/Events';
 import ContactusPage from './Pages/ContactusPage';
 import VolunteerRegistration from './Pages/VolunteerRegistration';
+import Navbar from './Components/Navigation/Navbar';
 
 function App() {
   
 
   return (
     <>
+    <Navbar/>
      <Routes>
       <Route path='/' element={<LandingPage/>} />
       <Route path='/home' element={<LandingPage/>} />

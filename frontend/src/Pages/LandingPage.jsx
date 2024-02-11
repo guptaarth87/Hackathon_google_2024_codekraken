@@ -16,7 +16,7 @@ import Donate from '../assets/landing/donate.jpeg';
 export default function LandingPage() {
   return (
     <>
-      {/* <Navbar /> */}
+      
       <HeroImage />
       <div className="container">
         

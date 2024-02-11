@@ -1,11 +1,21 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import API_URL from '../../_helper';
 
 export default function VolunteerRegistrationForm() {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
       console.log(data);
+
+      axios.post(`${API_URL}/volunteers`,data)
+      .then(res=>{
+        console.log(res.status);
+
+        window.alert("Your Volunteer data has been recorded successfully we will contact you for further process");
+      })
+
     };
   
     return (
