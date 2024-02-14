@@ -18,7 +18,7 @@ class CompletedEventsController:
                 "name_": event["name_"],
                 "recieved_amt": event["recieved_amt"],
                 "venue": event["venue"],
-                "date_":event["date"],
+                "date_":event["date_"],
                 "volunteers_participated": event["volunteers_participated"]
             }
             for event in completed_events_cursor

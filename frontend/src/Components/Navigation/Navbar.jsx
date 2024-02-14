@@ -4,9 +4,15 @@ import "./Navbar.css";
 import Logo from "../../assets/landing/logo-removebg.png";
 
 const Navbar = () => {
+  const closeMenu = () => {
+    // Get a reference to the collapse element (assuming it's the desired target)
+    const collapseElement = document.getElementById("navbarSupportedContent");
+    collapseElement.classList.remove("show");
+  };
+
   return (
     <nav className="header navbar navbar-expand-lg navbar-light bg-light ">
-      <div className="container">
+      <div className="container" >
         <Link className="navbar-brand" to="/">
          <img className="logo" src={Logo} />
         </Link>
@@ -21,31 +27,41 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse p-4" id="navbarSupportedContent" style={{"background-color":"#fff"}}>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-              <Link className="nav-link fnt-description" smooth to="/">
+              <Link className="nav-link fnt-description" smooth to="/"
+              onClick={closeMenu} 
+              >
                 Home
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link className="nav-link fnt-description" smooth to="/events">
+            <li className="nav-item " >
+              <Link className="nav-link fnt-description " smooth to="/events"
+              onClick={closeMenu} 
+              >
                 Events
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fnt-description" smooth to="/contact">
+              <Link className="nav-link fnt-description" smooth to="/contact"
+              onClick={closeMenu}
+              >
                 Contact Us
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fnt-description" smooth to="/gallery">
+              <Link className="nav-link fnt-description" smooth to="/gallery"
+              onClick={closeMenu}
+              >
                 Gallery
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fnt-description" smooth to="#faq">
+              <Link className="nav-link fnt-description" smooth to="#faq"
+              onClick={closeMenu}
+              >
                 FAQs
               </Link>
             </li>

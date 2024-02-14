@@ -25,7 +25,7 @@ export default function VolunteerRegistrationForm() {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
           <div className="mb-3 col-lg-6 col-md-5 col-sm-12">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="name_" className="form-label">
               Name
             </label>
             <input type="text" className="form-control" id="name" {...register('name')} />
@@ -64,7 +64,7 @@ export default function VolunteerRegistrationForm() {
             <label htmlFor="experience" className="form-label">
               Experience in Management (in years)
             </label>
-            <input type="number" className="form-control" id="experience" {...register('experience')} />
+            <input type="number" className="form-control" id="managementExperience" {...register('experience')} />
           </div>
           <div className="mb-3 col-lg-6 col-md-5 col-sm-12">
             <label htmlFor="researchExperience" className="form-label">

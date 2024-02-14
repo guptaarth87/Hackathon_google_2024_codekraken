@@ -17,9 +17,9 @@ class UpcomingEventsController:
                 "_id": str(event["_id"]),
                 "name_": event["name_"],
                 "recieved_amt": event["recieved_amt"],
-                "venue":event[" venue"],
-                "date_":event[" date_"],
-                "remaining_volunteers":event[" remaining_volunteers"]
+                "venue":event["venue"],
+                "date_":event["date_"],
+                "remaining_volunteers":event["remaining_volunteers"]
             }
             for event in upcoming_events_cursor
         ]
