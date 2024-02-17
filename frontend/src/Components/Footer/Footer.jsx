@@ -31,7 +31,7 @@ function Footer(){
                     <h5 className="mb-3 white fnt-heading">Social Media</h5>
                     <ul className="list-unstyled text-muted">
                         <li><a className="link white fnt-description" href="#">Facebook</a></li>
-                        <li><a className="link white fnt-description" href="https://www.instagram.com/datasaltinsta/?igshid=MzRlODBiNWFlZA%3D%3D"  target="_blank">Instagram</a></li>
+                        <li><a className="link white fnt-description" href="https://www.instagram.com/../?igshid=MzRlODBiNWFlZA%3D%3D"  target="_blank">Instagram</a></li>
                         <li><a className="link white fnt-description" href="#">Linkedin</a></li>
                         
                     </ul>
@@ -41,7 +41,7 @@ function Footer(){
                     <ul className="list-unstyled text-muted">
                         <li className='white fnt-description'>Phone No : +91 7879069987</li>
 
-                        <li className='white fnt-description'>Instagram : @datasaltinsta</li>
+                        <li className='white fnt-description'>Instagram : @TowardsHappiness</li>
                         
                     </ul>
                 </div>

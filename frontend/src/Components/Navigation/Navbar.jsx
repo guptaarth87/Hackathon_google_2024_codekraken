@@ -44,6 +44,15 @@ const Navbar = () => {
                 Events
               </Link>
             </li>
+
+            <li className="nav-item " >
+              <Link className="nav-link fnt-description " smooth to="/registerVolunteer"
+              onClick={closeMenu} 
+              >
+                Register as Volunteer
+              </Link>
+            </li>
+
             <li className="nav-item">
               <Link className="nav-link fnt-description" smooth to="/contact"
               onClick={closeMenu}

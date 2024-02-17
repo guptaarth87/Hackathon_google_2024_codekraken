@@ -3,7 +3,7 @@
 from app import mongo
 
 class VolunteerModel:
-    collection = mongo.db.volunteer
+    collection = mongo.db.Volunteers
 
     @classmethod
     def create_volunteer(cls, data):

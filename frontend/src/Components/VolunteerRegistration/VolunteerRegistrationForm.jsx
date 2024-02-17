@@ -8,19 +8,24 @@ export default function VolunteerRegistrationForm() {
 
     const onSubmit = (data) => {
       console.log(data);
-
-      axios.post(`${API_URL}/volunteers`,data)
-      .then(res=>{
-        console.log(res.status);
-
-        window.alert("Your Volunteer data has been recorded successfully we will contact you for further process");
-      })
-
+      let BMI = data.weight/((data.height/100)^2)
+      if (BMI > 18.5 && data.abled =='yes'){
+        axios.post(`${API_URL}/volunteers`,data)
+        .then(res=>{
+          console.log(res.status);
+  
+          window.alert("Your Volunteer data has been recorded successfully we will contact you for further process");
+        })
+      }
+     else{
+          window.alert("You are not in Fit position to apply")
+     }
     };
   
     return (
       <div className="container mt-5">
         <h3 className=''>Volunteer registration Form</h3>
+        <h6>You should have healthy BMI to register</h6>
         <br></br>
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
@@ -57,7 +62,7 @@ export default function VolunteerRegistrationForm() {
               <option value="12thpass">12th Pass</option>
               <option value="graduate">Graduate</option>
               <option value="master">Master</option>
-              <option value="phd">PhD</option>
+              <option value="postgraduate">PhD</option>
             </select>
           </div>
           <div className="mb-3 col-lg-6 col-md-5 col-sm-12">
@@ -85,6 +90,31 @@ export default function VolunteerRegistrationForm() {
               <option value="experienced">Experienced</option>
             </select>
           </div>
+
+          <div className="mb-3 col-lg-6 col-md-5 col-sm-12">
+            <label htmlFor="abled" className="form-label">
+              You are able to walk and carry out tasks as required?
+            </label>
+            <select className="form-control" id="abled" {...register('abled')}>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div className="mb-3 col-lg-6 col-md-5 col-sm-12">
+            <label htmlFor="weight" className="form-label">
+              Your Body Weight (in kg)
+            </label>
+            <input type="number" className="form-control" id="weight" {...register('weight')} />
+          </div>
+
+          <div className="mb-3 col-lg-6 col-md-5 col-sm-12">
+            <label htmlFor="height" className="form-label">
+              Your Height (in cm)
+            </label>
+            <input type="number" className="form-control" id="height" {...register('height')} />
+          </div>
+          <div className="col-12"></div>
           {/* <div className="col"></div> */}
           <button type="submit" className=" btn btn-primary col-lg-2 col-md-4 col-sm-4">
             Submit
