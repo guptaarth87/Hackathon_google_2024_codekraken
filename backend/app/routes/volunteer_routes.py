@@ -4,7 +4,7 @@ from flask import jsonify, request
 from app import app
 from app.controllers.volunteer_controller import VolunteerController
 import pandas as pd
-import joblib
+# import joblib
 
 @app.route('/',methods = ['GET'])
 def appstart():
