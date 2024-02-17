@@ -11,4 +11,5 @@ class VolunteerModel:
 
     @classmethod
     def get_all_volunteers(cls):
-        return cls.collection.find()
+        volunteer_list = list(cls.collection.find())
+        return volunteer_list
