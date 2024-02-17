@@ -12,6 +12,7 @@ import Navbar from './Components/Navigation/Navbar';
 import ScrollToTop from './ScrollToTop';
 import GallaryPage from './Pages/GallaryPage';
 import Payments from './Pages/Payments';
+import VolunteeringEligibility from './Components/VolunteerEligibility/VolunteerEligibility';
 
 function App() {
   
@@ -28,6 +29,7 @@ function App() {
       <Route path='/events' element={<Events/>} />
       <Route path='/contact' element={<ContactusPage/>} />
       <Route path='/registervolunteer' element={<VolunteerRegistration/>} />
+      <Route path='/volunteereligibility' element={<VolunteeringEligibility/>}/>
      </Routes>
      <Footer/>
     </>

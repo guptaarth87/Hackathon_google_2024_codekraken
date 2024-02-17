@@ -2,9 +2,12 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import API_URL from '../../_helper';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function VolunteerRegistrationForm() {
     const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
     const onSubmit = (data) => {
       console.log(data);
@@ -13,7 +16,8 @@ export default function VolunteerRegistrationForm() {
         axios.post(`${API_URL}/volunteers`,data)
         .then(res=>{
           console.log(res.status);
-  
+          navigate(`/volunteereligibility?eligible=${res.data.position}`);
+        console.log(res.data.position)
           window.alert("Your Volunteer data has been recorded successfully we will contact you for further process");
         })
       }
@@ -33,7 +37,7 @@ export default function VolunteerRegistrationForm() {
             <label htmlFor="name_" className="form-label">
               Name
             </label>
-            <input type="text" className="form-control" id="name" {...register('name')} />
+            <input type="text" className="form-control" id="name" {...register('name_')} />
           </div>
           <div className="mb-3 col-lg-6 col-md-5 col-sm-12">
             <label htmlFor="pinCode" className="form-label">

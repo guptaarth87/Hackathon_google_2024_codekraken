@@ -13,14 +13,15 @@ class VolunteerController:
         volunteers_list = [
             {
                 "_id": str(volunteer["_id"]),
-                "name": volunteer["name"],
+                "name_": volunteer["name_"],
                 "email": volunteer["email"],
-                "pincode": volunteer["pincode"],
-                "mobile_no": volunteer["mobile_no"],
-                "highest_qualification": volunteer["highest_qualification"],
-                "experience_in_management": volunteer["experience_in_management"],
-                "experience_in_research": volunteer["experience_in_research"],
-                "public_speaking": volunteer["public_speaking"]
+                "pinCode": volunteer["pinCode"],
+                "mobile": volunteer["mobile"],
+                "qualification": volunteer["qualification"],
+                "managementExperience": volunteer["managementExperience"],
+                "researchExperience": volunteer["researchExperience"],
+                "confidence": volunteer["confidence"],
+                "position": volunteer["position"]
             }
             for volunteer in volunteer_cursor
         ]
