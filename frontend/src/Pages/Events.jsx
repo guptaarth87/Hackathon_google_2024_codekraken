@@ -12,13 +12,14 @@ export default function Events() {
   const [UpcomingEvents , setUpcomingEvents] = useState(null)
   const [CompletedEvents , setCompletedEvents] = useState(null)
 
-  
+ 
   useEffect(() => {
     const loadData = async () => {
       try {
         const eventsResponse = await axios.get(`${API_URL}/events`);
         setEvents(eventsResponse.data.events);
-        
+        console.log(Events);
+       
 
         const upcomingEventsResponse = await axios.get(`${API_URL}/upcoming_events`);
         setUpcomingEvents(upcomingEventsResponse.data.upcoming_events);
@@ -34,78 +35,26 @@ export default function Events() {
 
     loadData();
   }, []); 
- 
+  let FoodDriveData = {}
+  let PlantationDriveData={}
+  let EducationalWorkshopData = {}
+   const getObjectByName = (arr, name) => arr.find(obj => obj.name_ === name);
+  if (Events !== null){
+     FoodDriveData = getObjectByName(Events ,"Food Drive" );
+     PlantationDriveData= getObjectByName(Events ,"Plantation Drive" );
+     EducationalWorkshopData=getObjectByName(Events ,"Educational Workshop" );
+  }
+     // console.log(CompletedEvents)
+    // const FoodDriveData = {
+    //     name_:"Food Drive",
+    //     required_amt: 10000,
+    //     remaining_amt:6000,
 
-  // console.log(CompletedEvents)
-    const FoodDriveData = {
-        name_:"Food Drive",
-        required_amt: 10000,
-        remaining_amt:6000,
+    // }
 
-    }
+   
 
-    const PlantationDriveData = {
-        name_:"Plantation Drive",
-        required_amt: 6000,
-        remaining_amt:2000,
 
-    }
-
-    const EducationalWorkshopData = {
-        name_:"Educational Workshop",
-        required_amt: 6000,
-        remaining_amt:2000,
-
-    }
-
-   const upCommingEvents =[
-    {
-        name_:"Food Drive",
-        recieved_amt: 10000,
-        venue:"Gwaltoli, Indore",
-        date_:"18-02-2024",
-        remaining_volunteers:4
-    },
-    {
-        name_:"Plantation Drive",
-        recieved_amt: 6000,
-        venue:"patalpani, Indore",
-        date_:"25-02-2024",
-        remaining_volunteers:4
-    },
-    {
-        name_:"Educational Workshop",
-        recieved_amt: 3000,
-        venue:"Jeevan jyoti, Indore",
-        date_:"25-02-2024",
-        remaining_volunteers:4
-    }
-    ]
-
-    const CompletedEventss=[
-            {
-                name_:"Food Drive",
-                recieved_amt: 10000,
-                venue:"Gwaltoli, Indore",
-                date_:"18-02-2024",
-                volunteers_participated:10
-            },
-            {
-                name_:"Plantation Drive",
-                recieved_amt: 6000,
-                venue:"patalpani, Indore",
-                date_:"25-02-2024",
-                volunteers_participated:10
-            },
-            {
-                name_:"Educational Workshop",
-                recieved_amt: 3000,
-                venue:"Jeevan jyoti, Indore",
-                date_:"25-02-2024",
-                volunteers_participated:10
-            }
-            ]
-    
   return (
     <>
     <br></br>
@@ -123,27 +72,37 @@ export default function Events() {
               
                <TabPanel >
                 
-                 <div className='border rounded col-12 p-5 food-card-background mt-3'>
+                {FoodDriveData? <div className='border rounded col-12 p-5 food-card-background mt-3'>
                         <EventCard cardData={FoodDriveData}/>
                         <br></br>
                         
                           <HashLink to="/payment" className='btn col-lg-2 col-md-3 col-sm-4 btn-food'>Donate 🤝</HashLink >
-                  </div>
+                  </div>:<></>
+                   }
 
-                 <div className='border rounded col-12 p-4 plantation-card-background  mt-3'>
-                 <EventCard cardData={PlantationDriveData}/>
-                 <br></br>
-                         
-                          <HashLink to="/payment" className='btn col-lg-2 col-md-3 col-sm-4 btn-plantation'>Donate 🤝</HashLink >
-                     
-                 </div>
+                   {PlantationDriveData?
+                    <div className='border rounded col-12 p-4 plantation-card-background  mt-3'>
+                    <EventCard cardData={PlantationDriveData}/>
+                    <br></br>
+                            
+                             <HashLink to="/payment" className='btn col-lg-2 col-md-3 col-sm-4 btn-plantation'>Donate 🤝</HashLink >
+                        
+                    </div>:
+                    <></>
+   
 
-                 <div className='border rounded col-12 p-4 education-card-background  mt-3'>
+                   }
+                {
+                  EducationalWorkshopData?
+<div className='border rounded col-12 p-4 education-card-background  mt-3'>
                  <EventCard cardData={EducationalWorkshopData}/>
                  <br></br>
                           
                           <HashLink to="/payment" className='btn col-lg-2 col-md-3 col-sm-4 btn-education'>Donate 🤝</HashLink > 
-                 </div>
+                 </div>:
+                 <></>
+                }
+                 
                </TabPanel>
 
                {/* upcomming events */}
