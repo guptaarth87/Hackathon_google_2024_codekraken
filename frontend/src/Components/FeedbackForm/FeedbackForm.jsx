@@ -4,15 +4,22 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./FeedbackForm.css";
 import API_URL from "../../_helper";
+import ReactGA from 'react-ga4';
 
 export default function FeedbackForm() {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {
+    ReactGA.event({
+      category: 'Feedback',
+      action: 'Click',
+      label: 'query' // Optional, add label if needed
+  });
     try {
       // Send a POST request using Axios
       const response = await axios.post(`${API_URL}/queries`, data);
       console.log("Response:", response.data);
+      alert("We have recieved your query we will contact you soon!");
       // Reset the form after successful submission
       reset();
     } catch (error) {

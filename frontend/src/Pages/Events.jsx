@@ -5,13 +5,14 @@ import EventCard from '../Components/AllEvents/EventCard';
 import { HashLink } from 'react-router-hash-link';
 import axios from 'axios';
 import API_URL from '../_helper';
+import { useNavigate } from 'react-router-dom';
 
 export default function Events() {
 
   const [Events , setEvents] = useState(null)
   const [UpcomingEvents , setUpcomingEvents] = useState(null)
   const [CompletedEvents , setCompletedEvents] = useState(null)
-
+ const navigate = useNavigate();
  
   useEffect(() => {
     const loadData = async () => {
@@ -76,7 +77,7 @@ export default function Events() {
                         <EventCard cardData={FoodDriveData}/>
                         <br></br>
                         
-                          <HashLink to="/payment" className='btn col-lg-2 col-md-3 col-sm-4 btn-food'>Donate 🤝</HashLink >
+                          <button onClick={()=>{navigate('/payment?paidFor=Food Drive')}} className='btn col-lg-2 col-md-3 col-sm-4 btn-food'>Donate 🤝</button >
                   </div>:<></>
                    }
 
@@ -85,7 +86,7 @@ export default function Events() {
                     <EventCard cardData={PlantationDriveData}/>
                     <br></br>
                             
-                             <HashLink to="/payment" className='btn col-lg-2 col-md-3 col-sm-4 btn-plantation'>Donate 🤝</HashLink >
+                             <button  onClick={()=>{navigate('/payment?paidFor=Plantation Drive')}} className='btn col-lg-2 col-md-3 col-sm-4 btn-plantation'>Donate 🤝</button >
                         
                     </div>:
                     <></>
@@ -98,7 +99,7 @@ export default function Events() {
                  <EventCard cardData={EducationalWorkshopData}/>
                  <br></br>
                           
-                          <HashLink to="/payment" className='btn col-lg-2 col-md-3 col-sm-4 btn-education'>Donate 🤝</HashLink > 
+                          <button  onClick={()=>{navigate('/payment?paidFor=Educational Workshop')}} className='btn col-lg-2 col-md-3 col-sm-4 btn-education'>Donate 🤝</button > 
                  </div>:
                  <></>
                 }

@@ -3,13 +3,18 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import API_URL from '../../_helper';
 import { useNavigate } from 'react-router-dom';
-
+import ReactGA from 'react-ga4';
 
 export default function VolunteerRegistrationForm() {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
+      ReactGA.event({
+        category: 'Button',
+        action: 'Click',
+        label: 'Volunteer Registeration' // Optional, add label if needed
+    });
       console.log(data);
       let BMI = data.weight/((data.height/100)^2)
       if (BMI > 18.5 && data.abled =='yes'){
