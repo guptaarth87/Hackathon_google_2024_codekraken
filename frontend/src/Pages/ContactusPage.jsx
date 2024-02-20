@@ -26,7 +26,7 @@ export default function ContactusPage() {
            <br></br>
            <img src={contact}  className='img_control_hidden col-lg-6 col-sm-2'/>
            <h4 className=''>Address</h4>
-           <div className='fnt-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque dignissimos perferendis exercitationem, consequatur quae.</div>
+           <div className='fnt-description'>20, New Sai Vihar Colony, Rau , 45331, dist. Indore.</div>
            <br></br>
            <h4 className=''>Phone No </h4>
            <div className='fnt-description'>+91 1212121212</div>

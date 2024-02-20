@@ -185,7 +185,7 @@ export default function Events() {
                 <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
                 <br></br>
                         
-                          <button className='btn col-lg-3 col-md-3 col-sm-4 btn-food'>View Details</button>
+                          <HashLink to='/detailspage' className='btn col-lg-3 col-md-3 col-sm-4 btn-food'>View Details</HashLink>
               
             </div>
             break;
@@ -200,7 +200,7 @@ export default function Events() {
             <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
             <br></br>
                          
-                          <button className='btn col-lg-3 col-md-3 col-sm-4 btn-plantation'>View Details</button>
+                          <HashLink to='/detailspage' className='btn col-lg-3 col-md-3 col-sm-4 btn-plantation'>View Details</HashLink>
                      
         </div>
             break;
@@ -215,7 +215,7 @@ export default function Events() {
             <div className='fnt-description col-lg-5'>Total amount recieved for drive - {event.recieved_amt} INR</div>
             <br></br>
                           
-                          <button className='btn col-lg-3 col-md-3 col-sm-4 btn-education'>View Details</button>
+                          <HashLink to='/detailspage' className='btn col-lg-3 col-md-3 col-sm-4 btn-education'>View Details</HashLink>
               
         </div>
             break;

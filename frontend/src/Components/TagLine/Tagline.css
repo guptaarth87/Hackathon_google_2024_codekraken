@@ -3,11 +3,18 @@
     background-repeat: no-repeat; 
     position:relative;
     /* width:100%; */
+   
     border-radius: 15px;
     object-fit:cover;
     
 }
 
+@media(max-width:600px){
+    .sectiontwo_div{
+        margin-top:2rem;
+        height: 36rem;
+}
+}
 .margin{
     margin-top:5rem;
     margin-bottom: 2rem;

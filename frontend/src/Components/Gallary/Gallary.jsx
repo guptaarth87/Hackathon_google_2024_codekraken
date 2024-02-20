@@ -1,4 +1,7 @@
 import React from 'react'
+import FoodImg from '../../assets/gallary/2.jpg';
+import EducationImg from '../../assets/gallary/4.jpg';
+import PlantationImg from '../../assets/gallary/10.jpg';
 
 export default function Gallary() {
   return (
@@ -20,7 +23,7 @@ export default function Gallary() {
 
         <div class="col-md-6 col-lg-4 mb-3">
           <div class="card shadow-sm">
-            <img src="https://via.placeholder.com/300" alt="Educational Workshop" class="card-img-top" />
+            <img src={EducationImg} alt="Educational Workshop" class="card-img-top" />
             <div class="card-body">
               <h5 class="card-title">Educational Workshops</h5>
               <p class="card-text">We provide practical skill-building workshops to empower individuals and communities.</p>
@@ -29,7 +32,7 @@ export default function Gallary() {
         </div>
         <div class="col-md-6 col-lg-4 mb-3">
           <div class="card shadow-sm">
-            <img src="https://via.placeholder.com/300" alt="Food Distribution Drive" class="card-img-top" />
+            <img src={FoodImg} alt="Food Distribution Drive" class="card-img-top" />
             <div class="card-body">
               <h5 class="card-title">Food Distribution Drives</h5>
               <p class="card-text">We conduct food drives to address hunger and ensure basic needs are met in our communities.</p>
@@ -38,7 +41,7 @@ export default function Gallary() {
         </div>
         <div class="col-md-6 col-lg-4 mb-3">
           <div class="card shadow-sm">
-            <img src="https://via.placeholder.com/300" alt="Plantation Drive" class="card-img-top" />
+            <img src={PlantationImg} alt="Plantation Drive" class="card-img-top" />
             <div class="card-body">
               <h5 class="card-title">Plantation Drives</h5>
               <p class="card-text">We organize plantation drives to promote environmental sustainability and green spaces.</p>

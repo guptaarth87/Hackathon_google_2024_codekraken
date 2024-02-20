@@ -14,6 +14,7 @@ import GallaryPage from './Pages/GallaryPage';
 import Payments from './Pages/Payments';
 import VolunteeringEligibility from './Components/VolunteerEligibility/VolunteerEligibility';
 import ReactGa from 'react-ga4';
+import DetailsPage from './Pages/DetailsPage';
 
 const TRACKING_ID = 'G-P3Y2PN1S2Q';
 // const TRACKING_ID = 'GT-M69MH5KP';
@@ -34,6 +35,7 @@ function App() {
       <Route path='/contact' element={<ContactusPage/>} />
       <Route path='/registervolunteer' element={<VolunteerRegistration/>} />
       <Route path='/volunteereligibility' element={<VolunteeringEligibility/>}/>
+     <Route path='/detailspage' element={<DetailsPage/>}/>
      </Routes>
      <Footer/>
     </>
